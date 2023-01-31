@@ -1,8 +1,15 @@
-const express = require('express')
-const dotenv = require('dotenv').config()
-const port = process.env.PORT || 5000
+const express = require('express');
+const dotenv = require('dotenv').config();
+const port = process.env.PORT || 5000;
+const { errorHandler } = require('./middleware/errorMiddleware')
 
+const app = express();
 
-const app = express()
+app.use(express.json())
+app.use(express.urlencoded({extended: false}))
 
-app.listen(port, () => {console.log(`server is running on Port ${port}`)})
+app.use('/', require('./routes/ecartRoutes'));
+
+app.use(errorHandler)
+
+app.listen(port, () => {console.log(`server is running on Port ${port}`)});
