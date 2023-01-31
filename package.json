@@ -1,0 +1,20 @@
+{
+  "name": "api-backend-assignment",
+  "version": "1.0.0",
+  "description": "test assignment",
+  "main": "server.js",
+  "scripts": {
+    "start": "node ./backend/server.js",
+    "server": "nodemon ./backend/server.js"
+  },
+  "author": "Rohith",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
